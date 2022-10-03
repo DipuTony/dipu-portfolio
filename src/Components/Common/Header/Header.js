@@ -5,7 +5,15 @@ import { MdDarkMode } from 'react-icons/md';
 
 function Header() {
 
-    const [theme, setTheme] = useState('light')
+    const [theme, setTheme] = useState()
+
+    useEffect(() => {
+        if (localStorage.getItem('mode') == 'dark') {
+            setTheme("dark")
+        } else {
+            setTheme('light')
+        }
+    }, [])
 
     useEffect(() => {
         document.body.className = theme;
@@ -33,7 +41,7 @@ function Header() {
                 </nav>
                 <div className='flex justify-end mr-10 -mt-3'>
                     {theme == 'light' && <TbBrightnessUp size={25} className="cursor-pointer" onClick={handleModeButton} />}
-                    {theme !='light' && <MdDarkMode size={25} className="cursor-pointer" onClick={handleModeButton} />}
+                    {theme != 'light' && <MdDarkMode size={25} className="cursor-pointer" onClick={handleModeButton} />}
                 </div>
             </div>
         </>
