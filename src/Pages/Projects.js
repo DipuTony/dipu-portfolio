@@ -1,34 +1,61 @@
 import React from 'react'
+import codingImg from '../Assets/images/coding.jpg'
 
 function Projects() {
+
+  const fakeData = [
+    {
+      'id': 1,
+      'title': 'My First Project',
+      'subtitle': 'This is the sub titile.'
+    },
+    {
+      'id': 2,
+      'title': 'My Secound Project',
+      'subtitle': 'This secound sub titile.'
+    },
+    {
+      'id': 3,
+      'title': 'My Third Project',
+      'subtitle': 'This Third sub titile.'
+    }
+  ]
+
   return (
 
     <>
-      <div>
+      <div className='pt-20 min-h-screen bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300'>
 
-        <div className='w-64 h-72'>
+        <p className='text-center '>Project Portfolio</p>
 
-        <a href="#" class="block overflow-hidden rounded-2xl">
-          <img
-            alt="Office"
-            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            class="h-56 w-full object-cover"
-          />
-
-          <div class="bg-gray-900 p-4">
-            <p class="text-xs text-gray-500">website.com</p>
-
-            <h5 class="text-sm text-white">
-              How to position your furniture for positivity
-            </h5>
-
-            <p class="mt-1 text-xs text-gray-500">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum nobis
-              aliquid accusamus? Sint, sequi voluptas.
-            </p>
-          </div>
-        </a>
+        <div className='flex justify-between md:mx-20 mx-5 border-b py-4 dark:border-gray-700 border-gray-400'>
+          <input placeholder='Search...' type="text" className='bg-white md:w-60 w-40 border border-black dark:bg-gray-700 px-4 py-2 rounded-md' />
+          <select name="category" className='bg-white md:w-60 w-40 border border-black dark:bg-gray-700 px-4 py-2 rounded-md'>
+            <option value="all">All Projects</option>
+            <option value="php">PHP Projects</option>
+            <option value="payment">Payment Gateway</option>
+          </select>
         </div>
+
+        <div className='flex justify-center'>
+          <div className='m-5 md:m-14 grid md:grid-cols-3 grid-cols-1 gap-10'>
+            {
+              fakeData.map((e, i) => (
+                <div key={i}></div>,
+                <div className='dark:bg-gray-600 shadow-xl  bg-white w-80 h-96 rounded-2xl'>
+                  <img src={codingImg} alt="Project Image" className='h-64 rounded-t-2xl' />
+                  <div className='p-5 text-center'>
+                    <h1 className='text-2xl'>{e.title}</h1>
+                    <h3 className='text-xl'>{e.subtitle}</h3>
+                  </div>
+                </div>
+              ))
+
+            }
+          </div>
+
+        </div>
+
 
       </div>
     </>

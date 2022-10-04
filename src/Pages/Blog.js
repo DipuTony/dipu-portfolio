@@ -33,8 +33,8 @@ function Blog() {
             <div className="w-full bg-white dark:bg-gray-900 p-3">
                 <div className="header flex items-end justify-between mb-5">
                     <div className="title mt-10">
-                        <p className="md:text-4xl text-2xl font-bold text-gray-800 dark:text-gray-300">
-                            Lastest Blog Posts
+                        <p className="md:text-3xl text-2xl font-bold text-gray-800 dark:text-gray-300">
+                            Latest Blog Posts
                         </p>
                     </div>
                     {/* <div className="text-end">
