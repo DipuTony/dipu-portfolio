@@ -32,17 +32,17 @@ function Header() {
 
     return (
         <>
-            <div className='dark w-screen h-10 dark:text-white text-black dark:bg-slate-600 bg-sky-200'>
-                <nav className='flex justify-center'>
+            <div className='fixed opacity-80 w-screen h-10 dark:text-white text-black dark:bg-slate-900 bg-sky-200'>
+                <nav className='flex opacity-100 justify-center pt-2 font-semibold'>
                     <Link className='px-2' to="/">Home</Link>
                     <Link className='px-2' to="/about">About</Link>
                     <Link className='px-2' to="/contact">Contact</Link>
                     <Link className='px-2' to="/projects">Projects</Link>
                     <Link className='px-2' to="/blog">Blog</Link>
                 </nav>
-                <div className='flex justify-end mr-10 -mt-3'>
-                    {theme != 'light' && <TbBrightnessUp size={25} className="cursor-pointer" onClick={handleModeButton} />}
-                    {theme == 'light' && <MdDarkMode size={25} className="cursor-pointer" onClick={handleModeButton} />}
+                <div className='flex justify-end md:mr-12 mr-5 mt-2'>
+                    {theme != 'light' && <TbBrightnessUp size={30} className="cursor-pointer bg-gray-500  " onClick={handleModeButton} />}
+                    {theme == 'light' && <MdDarkMode size={30} className="cursor-pointer" onClick={handleModeButton} />}
                 </div>
             </div>
         </>
