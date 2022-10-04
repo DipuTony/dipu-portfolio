@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Blog() {
 
@@ -18,7 +19,7 @@ function Blog() {
             'img' :'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plutchik-wheel.svg/135px-Plutchik-wheel.svg.png',
         },
         {
-            'id': 2,
+            'id': 3,
             'category': 'News',
             'title': 'How to a Good Atricle!',
             'desc': 'Good Article sit amet consectetur adipisicing elit. Facilis, animi..',
@@ -53,7 +54,7 @@ function Blog() {
                     {
                         fakeData.map((e, i) => (
                             <div className="overflow-hidden border dark:border-gray-700 shadow-lg rounded-lg h-90 w-80 md:w-80 cursor-pointer m-auto">
-                                <a href="#" className="w-full block h-full">
+                                <Link to={`/blog/${e.id}`} className="w-full block h-full">
                                     <img alt="blog photo" src={e.img} className="max-h-40 w-full object-cover" />
                                     <div className="bg-white dark:bg-gray-800 w-full p-4">
                                         <p className="text-indigo-500 text-md font-medium">{e.category}</p>
@@ -69,7 +70,7 @@ function Blog() {
                                             </div>
                                         </div>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         ))
                     }
