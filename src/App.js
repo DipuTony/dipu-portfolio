@@ -14,8 +14,10 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Footer from './Components/Common/Footer/Footer';
 import Header from './Components/Common/Header/Header';
 import About from './Pages/About';
+import Blog from './Pages/Blog';
 import Contact from './Pages/Contact';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
@@ -30,7 +32,9 @@ function App() {
           <Route path="/about" element={< About />} />
           <Route path="/contact" element={< Contact />} />
           <Route path="/projects" element={< Projects />} />
+          <Route path="/blog" element={< Blog />} />
         </Routes>
+        <Footer />
       </Router>
 
     </>

@@ -38,10 +38,11 @@ function Header() {
                     <Link className='px-2' to="/about">About</Link>
                     <Link className='px-2' to="/contact">Contact</Link>
                     <Link className='px-2' to="/projects">Projects</Link>
+                    <Link className='px-2' to="/blog">Blog</Link>
                 </nav>
                 <div className='flex justify-end mr-10 -mt-3'>
-                    {theme == 'light' && <TbBrightnessUp size={25} className="cursor-pointer" onClick={handleModeButton} />}
-                    {theme != 'light' && <MdDarkMode size={25} className="cursor-pointer" onClick={handleModeButton} />}
+                    {theme != 'light' && <TbBrightnessUp size={25} className="cursor-pointer" onClick={handleModeButton} />}
+                    {theme == 'light' && <MdDarkMode size={25} className="cursor-pointer" onClick={handleModeButton} />}
                 </div>
             </div>
         </>
