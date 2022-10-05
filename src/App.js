@@ -2,9 +2,9 @@
 //  
 //  Author :- Dipu Kumar Singh
 //  Project :- Dipu Porfolio
-//  Date : - 03 - Oct - 2022
 //  Component :- App.js
-//  Note : -
+//  Created Date : - 03 - Oct - 2022
+//  Last Modified :- 05 - Oct - 2022
 //
 /////////////////////////////////////////////
 
@@ -34,7 +34,7 @@ function App() {
           <Route path="/contact" element={< Contact />} />
           <Route path="/projects" element={< Projects />} />
           <Route path="/blog" element={< Blog />} />
-          <Route path="/blog/:id" element={< BlogSinglePost />} />
+          <Route path="/blog/:id/:titile" element={< BlogSinglePost />} />
         </Routes>
         <Footer />
       </Router>

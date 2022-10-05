@@ -1,3 +1,13 @@
+/////////////////////////////////////////////
+//  
+//  Author :- Dipu Kumar Singh
+//  Project :- Dipu Porfolio
+//  Component :- Blog.js
+//  Note : -
+//  Created Date : - 04 - Oct - 2022
+//  Last Modifiled : -     
+//
+/////////////////////////////////////////////
 import React from 'react'
 import { FcDownload } from 'react-icons/fc';
 
@@ -26,3 +36,9 @@ function Home() {
 }
 
 export default Home
+
+/*
+Exported To -
+1. App.js
+
+*/

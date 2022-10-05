@@ -1,3 +1,13 @@
+/////////////////////////////////////////////
+//  
+//  Author :- Dipu Kumar Singh
+//  Project :- Dipu Porfolio
+//  Component :- Contact.js
+//  Created Date : - 03 - Oct - 2022
+//  Last Modifiled : -     
+//
+/////////////////////////////////////////////
+
 import React from 'react'
 import { MdLocationPin } from 'react-icons/md';
 import { IoIosCall } from 'react-icons/io';
@@ -74,3 +84,9 @@ function Contact() {
 }
 
 export default Contact
+
+/*
+Exported To -
+1. App.js
+
+*/

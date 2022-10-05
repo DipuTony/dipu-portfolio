@@ -1,7 +1,19 @@
+/////////////////////////////////////////////
+//  
+//  Author :- Dipu Kumar Singh
+//  Project :- Dipu Porfolio
+//  Component :- Blog.js
+//  Created Date : - 04 - Oct - 2022
+//  Last Modifiled : - 05 - Oct - 2022     
+//
+/////////////////////////////////////////////
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Blog() {
+
+    let nospaces;  // This variable used for store filterdata Remove Sapace and Add (-)
+
 
     const fakeData = [
         {
@@ -54,7 +66,8 @@ function Blog() {
                     {
                         fakeData.map((e, i) => (
                             <div className="overflow-hidden border dark:border-gray-700 shadow-lg rounded-lg h-90 w-80 md:w-80 cursor-pointer m-auto">
-                                <Link to={`/blog/${e.id}`} className="w-full block h-full">
+                                {nospaces = e.title.replace(/ /g,'-')}  {/* Here it will remove spasce and add ( - ) */}
+                                <Link to={`/blog/${e.id}/${nospaces}`} className="w-full block h-full">
                                     <img alt="blog photo" src={e.img} className="max-h-40 w-full object-cover" />
                                     <div className="bg-white dark:bg-gray-800 w-full p-4">
                                         <p className="text-indigo-500 text-md font-medium">{e.category}</p>
@@ -84,3 +97,9 @@ function Blog() {
 }
 
 export default Blog
+
+/*
+Exported To -
+1. App.js
+
+*/

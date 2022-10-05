@@ -1,3 +1,12 @@
+/////////////////////////////////////////////
+//  
+//  Author :- Dipu Kumar Singh
+//  Project :- Dipu Porfolio
+//  Component :- About.js
+//  Created Date : - 04 - Oct - 2022
+//  Last Modifiled : - 05 - Oct - 2022     
+//
+/////////////////////////////////////////////
 import React from 'react'
 
 function About() {
@@ -22,3 +31,9 @@ function About() {
 }
 
 export default About
+
+/*
+Exported To -
+1. App.js
+
+*/
