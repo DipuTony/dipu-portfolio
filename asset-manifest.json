@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/dipu-portfolio/static/css/main.93c8c47e.css",
+    "main.js": "/dipu-portfolio/static/js/main.3a48b7b1.js",
+    "static/js/787.540d3ee8.chunk.js": "/dipu-portfolio/static/js/787.540d3ee8.chunk.js",
+    "service-worker.js": "/dipu-portfolio/service-worker.js",
+    "static/media/coding.jpg": "/dipu-portfolio/static/media/coding.5fad30fbe0155609160e.jpg",
+    "static/media/imgNotFound.jpg": "/dipu-portfolio/static/media/imgNotFound.c70a5e8ce5fcb53e16ef.jpg",
+    "index.html": "/dipu-portfolio/index.html",
+    "main.93c8c47e.css.map": "/dipu-portfolio/static/css/main.93c8c47e.css.map",
+    "main.3a48b7b1.js.map": "/dipu-portfolio/static/js/main.3a48b7b1.js.map",
+    "787.540d3ee8.chunk.js.map": "/dipu-portfolio/static/js/787.540d3ee8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93c8c47e.css",
+    "static/js/main.3a48b7b1.js"
+  ]
+}
