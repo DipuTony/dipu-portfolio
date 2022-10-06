@@ -21,6 +21,7 @@ import Blog from './Pages/Blog';
 import BlogSinglePost from './Pages/BlogSinglePost';
 import Contact from './Pages/Contact';
 import Home from './Pages/Home';
+import Login from './Pages/Login';
 import Projects from './Pages/Projects';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/contact" element={< Contact />} />
           <Route path="/projects" element={< Projects />} />
           <Route path="/blog" element={< Blog />} />
+          <Route path="/login" element={< Login />} />
           <Route path="/blog/:id/:titile" element={< BlogSinglePost />} />
         </Routes>
         <Footer />

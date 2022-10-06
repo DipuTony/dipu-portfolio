@@ -7,13 +7,27 @@
 //  Last Modifiled : - 05 - Oct - 2022     
 //
 /////////////////////////////////////////////
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import imgNotFound from '../Assets/images/imgNotFound.jpg'
 
 function Blog() {
-
     let nospaces;  // This variable used for store filterdata Remove Sapace and Add (-)
 
+    const [data, setData] = useState()
+
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API_URL}/blog`)
+            .then((res) => {
+                // console.log("Blog Data", res.data)
+                setData(res.data);
+            })
+            .catch((error) => {
+                console.log("Error in Getting post ", error)
+            })
+
+    }, [])
 
     const fakeData = [
         {
@@ -21,21 +35,7 @@ function Blog() {
             'category': 'video',
             'title': 'How to write Hello World!',
             'desc': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, animi..',
-            'img' :'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plutchik-wheel.svg/135px-Plutchik-wheel.svg.png',
-        },
-        {
-            'id': 2,
-            'category': 'News',
-            'title': 'How to a Good Atricle!',
-            'desc': 'Good Article sit amet consectetur adipisicing elit. Facilis, animi..',
-            'img' :'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plutchik-wheel.svg/135px-Plutchik-wheel.svg.png',
-        },
-        {
-            'id': 3,
-            'category': 'News',
-            'title': 'How to a Good Atricle!',
-            'desc': 'Good Article sit amet consectetur adipisicing elit. Facilis, animi..',
-            'img' :'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plutchik-wheel.svg/135px-Plutchik-wheel.svg.png',
+            'img': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Plutchik-wheel.svg/135px-Plutchik-wheel.svg.png',
         }
     ]
 
@@ -63,10 +63,38 @@ function Blog() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-2 gap-8">
 
+
+                    {
+                        data?.map((e, i) => (
+                            <div key={i}></div>,
+                            <div className="overflow-hidden border dark:border-gray-700 shadow-lg rounded-lg h-90 w-80 md:w-80 cursor-pointer m-auto">
+                                <p className='hidden'>{nospaces = e.title.replace(/ /g, '-')}  </p>{/* Here it will remove spasce and add ( - ) */}
+                                <Link to={`/blog/${e._id}/${nospaces}`} className="w-full block h-full">
+                                    <img alt="blog photo" src={e.img || imgNotFound} className="max-h-40 w-full object-cover" />
+                                    <div className="bg-white dark:bg-gray-800 w-full p-4">
+                                        <p className="text-indigo-500 text-md font-medium">{e.category || 'Article'}</p>
+                                        <p className="text-gray-800 dark:text-white text-xl font-medium mb-2">{e.title}</p>
+                                        <p className="text-gray-400 dark:text-gray-300 font-light text-md">{e.description}</p>
+                                        <div className="flex items-center mt-4">
+                                            <a href="#" className="block relative">
+                                                <img alt="profil" src="https://avatars.githubusercontent.com/u/9476513?v=4" className="mx-auto object-cover rounded-full h-10 w-10 " />
+                                            </a>
+                                            <div className="flex flex-col justify-between ml-4 text-sm">
+                                                <p className="text-gray-800 dark:text-white">Dipu Singh</p>
+                                                <p className="text-gray-400 dark:text-gray-300">04 Oct 2022 - 6 min read</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        ))
+                    }
+
                     {
                         fakeData.map((e, i) => (
+                            <div key={i}></div>,
                             <div className="overflow-hidden border dark:border-gray-700 shadow-lg rounded-lg h-90 w-80 md:w-80 cursor-pointer m-auto">
-                                {nospaces = e.title.replace(/ /g,'-')}  {/* Here it will remove spasce and add ( - ) */}
+                                <p className='hidden'>{nospaces = e.title.replace(/ /g, '-')}  </p>{/* Here it will remove spasce and add ( - ) */}
                                 <Link to={`/blog/${e.id}/${nospaces}`} className="w-full block h-full">
                                     <img alt="blog photo" src={e.img} className="max-h-40 w-full object-cover" />
                                     <div className="bg-white dark:bg-gray-800 w-full p-4">
